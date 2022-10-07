@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: lightcoral;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(227, 247, 247);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(.9);
+  opacity: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  transition-delay: 0s;
+}
+
+form.active {
+  transform: translateY(-50%);
+  opacity: 1;
+  z-index: 200;
+  transition-delay: 0.3s;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group span {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 40px 8px 12px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid grey;
+  transition: all 0.3s ease;
+}
+
+/* Validation Starts*/
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border-color: rgb(72, 145, 235);
+  background: lightgrey;
+}
+
+.input-group input:focus + i,
+.input-group input:not(:placeholder-shown) + i {
+  color: rgb(72, 145, 235);
+}
+
+.input-group input:focus:valid {
+  box-shadow: 0 0 0 2px lightgreen;
+}
+
+.input-group input:focus:invalid {
+  box-shadow: 0 0 0 2px rgb(180, 92, 92);
+}
+
+.input-group input:valid:not(:placeholder-shown) {
+  border-color: green;
+}
+
+.input-group input:valid:not(:placeholder-shown) + i {
+  color: green;
+}
+
+.input-group input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+
+.input-group input:invalid:not(:placeholder-shown) + i {
+  color: rgb(232, 52, 52);
+}
+
+.input-group input:focus,
+.input-group input:focus:placeholder-shown {
+  box-shadow: 0 0 0 2px rgb(72, 145, 235);
+}
+/* Validation Ends */
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.form-group .help {
+  font-size: 12px;
+  color: grey;
+}
+
+.btn-submit {
+  display: block;
+  padding: 10px 0px;
+  width: 100%;
+  color:rgb(255, 255, 255);
+  background: rgb(53, 119, 199);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.btn-submit:hover {
+  background: rgb(72, 145, 235);
+}
+
+a {
+  color: rgb(72, 145, 235);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(53, 119, 199);
+}
